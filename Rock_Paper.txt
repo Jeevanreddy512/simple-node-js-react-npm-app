@@ -1,0 +1,43 @@
+import random
+
+def get_choices():  #Function
+  player_choice = input("Enter a choice (rock, paper, sessiors)=")
+  options = ["rock", "paper", "sessiors"]
+  computer_choice = random.choice(options)
+  choices = {"player": player_choice, "computer": computer_choice}
+
+  return choices
+
+
+choices = get_choices()
+
+
+def check_win(player, computer):
+  #print ("you choose " + player + "computer choose " + computer)
+  print(f"you choose {player}, computer choose {computer}")
+  if player == computer:
+    return "It's a tie!!"
+  elif player == "rock":
+    if computer == "sessiors":
+      return " Rock smashses sessiors! you win"
+    else:
+      return "paper covers rock! you loose "
+  elif player == "sessiors":
+    if computer == "rock":
+      return " Sessior smashses rock! you Loose"
+    else:
+      return "Sessior cuts paper! you win "
+  elif player == "paper":
+    if computer == "rock":
+      return " Paper covers rock! you win"
+    else:
+      return "Sessior cuts paper! you Loose "
+
+
+result = check_win(choices["player"], choices["computer"])
+print(result)
+
+# Dictionieris - Used to store key value pairs
+dict = {"name": "Jeevan", "color": "choices"}
+#list
+food = ["pizza", "egg", "carrot"]
